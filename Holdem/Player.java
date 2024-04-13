@@ -1,9 +1,9 @@
 /***** 
    Texas Hold'em Project 
    
-   Date Started : Friday, April 12, 2024
+   Date Started : Friday, April 12, 2024, 19:15
    
-   Date Finished : xxxday, XXX XX, XXXX
+   Date Finished : xxxday, XXX XX, XXXX, XX:XX
    
    Made by : Kyler A. Swindle (Auburn University - Software Engineering Major - Sophomore)
       Contact : 
@@ -60,6 +60,11 @@ class Player {
    private int reserves; // ------------- integer to store the amount of money (Dollars, $) 
                                        // each player has.
    
+   private int bet; // ------------------ integer to store the amount of funds each Player has bet, and/or, 
+                                       // alternatively, if it is not yet their turn, their outstanding bet
+                                       // prior to making the decision to match, raise, or fold another Player's
+                                       // bet amount.
+   
    /****************************************************************************************************************
       Constructor(s): 
    */
@@ -71,6 +76,7 @@ class Player {
       this.reserves = 10000;
       this.isIn = false;
       this.pocket = new ArrayList<Integer>();
+      this.bet = 0;
    }
    
    /****************************************************************************************************************
@@ -84,6 +90,7 @@ class Player {
       System.out.println(this.reserves);
       System.out.println(this.isIn);
       System.out.println(this.pocket);
+      System.out.println(this.bet);
    }
    
    // getReserves() outputs the integer value of the 
@@ -123,5 +130,77 @@ class Player {
    public void setPocket (int card) {
       this.pocket.add(card);
    }
+   
+   // getBet() returns the private int bet, unique to each 
+   // respective Player. 
+   public int getBet () {
+      return this.bet;
+   }
+   
+   // setBet() accesses the private int bet, unique to each respective
+   // Player, used in adding funds to the 'pot' of all other player's
+   // bets and setting bet = 0 after doing so. 
+   public void setBet (int bet) {
+      this.bet = bet;
+   }
+   
+   // getIsIn() returns the private boolean isIn, unique to each 
+   // respective Player. 
+   public boolean getIsIn () {
+      return this.isIn;
+   }
+   
+   // setIsIn() assigns the private boolean isIn, unique to each 
+   // respective Player, used in determining whether the PLayer 
+   // matches or folds. 
+   public void setIsIn (boolean act) {
+      this.isIn = act;
+   }
+   
+   /****************************************************************************************************************
+      Various methods(s): 
+   */
+   
+   // betAmount() method determines the amount for each 'simulated' 
+   // (to refrain from the use of the term 'A.I.') player, henceforth referred 
+   // to as a "SIMP," to bet, weighing factors such as the following to make decisions: 
+      // the respective SIMP's current hand, 
+      // the amount that the respective SIMP has bet, 
+         // compared to the amount in their reserves, 
+      // the amount that the respective SIMP has bet, 
+         // compared to the amount in the pot, 
+      // the possibility of other player's having a higher hand than 
+         // their own, based on the shared cards, 
+      // and the probability that the SIMP can make a higher hand with
+         // the outstanding shared cards to be dealt (if there are no 
+         // more cards to be dealt, then, of course, that probability
+         // would be zero), 
+   public int betAmount () {
+      /*
+         WORK IN PROGRESS
+            * currently only bets based on the SIMP's current hand & bet compared to reserves
+      */
       
+      if (this.hand <= 3) {
+         setIsIn(true);
+         // case for other SIMP's going all-in
+         if (getBet() >= getReserves() || this.hand <= 5) { 
+            setBet(getReserves());
+            return getBet();
+         } 
+         // case for if the outstanding bet is lower 
+         // than 33% of the SIMP's reserves
+         if (getBet() <= (getReserves() / 3)) {
+            setBet(getReserves() * 3);
+            return getBet();
+         }
+         // defaults to 10% of reserves
+         setBet(getReserves() / 10);
+         return getBet();
+      } else {
+         setIsIn(false);
+         setBet(0);
+         return getBet();
+      }
+   }
 }
