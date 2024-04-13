@@ -404,31 +404,8 @@ class Table {
       
       // Iterates each of the SIMPs in players ArrayList to determine
       // which one has the highest hand private variable. 
-      for (int i = 0; i < this.players.size() - 1; i++) {
-         if (!this.players.get(i).getIsIn()) {
-            i++; // skips folded SIMPs
-         }
-         
-         if (this.players.get(i).getHand() == this.players.get(highIndex).getHand()) {
-            // in the event of a tie, re-assigns highIndex to the SIMP with the High Card
-            boolean isTie = false;
-            
-            for (int c = 0; c < 2; c++) {
-               for (int d = 0; d < 2; d++) {
-                  if (this.players.get(i).getPocket().get(c) == this.players.get(highIndex).getPocket().get(d)) {
-                     isTie = true;
-                  }
-               }
-            }
-            
-            if (isTie) {
-               this.tied.add(this.players.get(highIndex));  // in the event of the same High Card between SIMPs, returns -1 out of bounds
-               this.tied.add(this.players.get(i));
-               return -1;        // and adds the indices of the tied SIMPs to the tied ArrayList
-            }
-         }
-         
-         if (this.players.get(i).getHand() > this.players.get(highIndex).getHand()) {
+      for (int i = 0; i < this.players.size(); i++) {         
+         if (this.players.get(i).getHand() >= this.players.get(highIndex).getHand()) {
             highIndex = i; // re-assigns highIndex to the SIMP with the highest hand
          }
       }
