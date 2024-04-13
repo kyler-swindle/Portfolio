@@ -289,7 +289,7 @@ class Table {
          hand = 2;
       }
       
-      // sets hand for Two-Pair
+      // sets hand for Two-Pair ****NEEDS TO BE FIXED****
       if (numPairs == 2) {
          hand = 3;
       }
