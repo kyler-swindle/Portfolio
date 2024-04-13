@@ -317,6 +317,7 @@ class Table {
       
       if (consecutive >= 5) {
          straight = true;
+         hand = 5;
       }
             
       // checks for flush among combCards
