@@ -20,10 +20,22 @@
 
 // The Game Class is where both of the other two classes are implemented
 // to create the Texas Hold'em Game.  
+
+import java.util.ArrayList;
+
 class Game {
 
    public static void main (String[] args) {
       Table game = new Table(5);
+      
+      /*
+      ArrayList<Integer> temp = new ArrayList<Integer>();
+      temp.add(12);
+      game.allCards.add(12);
+      temp.add(13);
+      game.allCards.add(13);
+      game.players.get(0).setPocket(temp);
+      */
       
       System.out.println("\nPlayers: ");
       for (int i = 0; i < game.players.size(); i++) {
@@ -37,7 +49,7 @@ class Game {
             }
          }
          
-         System.out.println("Hand: " + game.decodeHand(game.players.get(i).getHand()));
+         System.out.println(" Hand: " + game.decodeHand(game.players.get(i).getHand()));
       }
       
       System.out.println("\nFlop: ");
@@ -64,7 +76,7 @@ class Game {
             }
          }
          
-         System.out.println("Hand: " + game.decodeHand(game.players.get(i).getHand()));
+         System.out.println(" Hand: " + game.decodeHand(game.players.get(i).getHand()));
       }
       
       System.out.println("\nTurn: ");
@@ -91,7 +103,7 @@ class Game {
             }
          }
          
-         System.out.println("Hand: " + game.decodeHand(game.players.get(i).getHand()));
+         System.out.println(" Hand: " + game.decodeHand(game.players.get(i).getHand()));
       }
       
       System.out.println("\nRiver: ");
@@ -118,10 +130,12 @@ class Game {
             }
          }
          
-         System.out.println("Hand: " + game.decodeHand(game.players.get(i).getHand()));
+         System.out.println(" Hand: " + game.decodeHand(game.players.get(i).getHand()));
       }
       
       System.out.println("\nHighest Hand: Player:" + game.currHighestHand() + " - " + game.decodeHand(game.players.get(game.currHighestHand()).getHand()));
+      
+      
    }
    
 }
