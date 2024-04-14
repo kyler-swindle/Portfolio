@@ -127,8 +127,8 @@ class Player {
    // setPocket() accesses the private ArrayList<Integer> pocket, 
    // unique to each respective Player, to be used in the Table 
    // constructor when the cards are initially dealt to each Player.
-   public void setPocket (int card) {
-      this.pocket.add(card);
+   public void setPocket (ArrayList<Integer> cards) {
+      this.pocket = cards;
    }
    
    // getBet() returns the private int bet, unique to each 
