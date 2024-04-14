@@ -1,2 +1,2 @@
 # Portfolio
-Various projects I made. 
+Various projects I've made. 
