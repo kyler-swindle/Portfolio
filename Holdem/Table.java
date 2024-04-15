@@ -389,9 +389,16 @@ class Table {
       if (this.currTurn >= this.players.size()) {
         this.currTurn = 0; 
       }
-      ArrayList<Integer> combCards = new ArrayList<>(this.players.get(this.currTurn).getPocket());
-      combCards.addAll(this.table);
+      ArrayList<Integer> tempComb = new ArrayList<>(this.players.get(this.currTurn).getPocket());
+      tempComb.addAll(this.table);
+      ArrayList<Integer> combCards = new ArrayList<>(tempComb);
       
+      for (Integer x : tempComb) {
+         if (x / 4 == 0) {
+            combCards.add(x + 52);
+         }
+      }
+            
       ArrayList<Integer> rankCards = new ArrayList<>();
       for (Integer n : combCards ) {
          rankCards.add(n / 4);
@@ -471,6 +478,9 @@ class Table {
       for (int i = 0; i < sortedRanks.size() - 1; i++) {
          if (sortedRanks.get(i) == sortedRanks.get(i + 1) - 1) {
             consecutive++;
+            if (consecutive >= 5) {
+               break;
+            }
          } else {
             consecutive = 1;
          }
@@ -524,36 +534,54 @@ class Table {
          }
       }
       
-      /*
-      // checks for a Straight-Flush among the sorted combCards 
+      
+      // checks for a Straight-Flush among the sorted combCards by first
+      // iterating and and checking cards for a specific suit to a separate 
+      // temp ArrayList suitedCards, then it checks for consecuitives within 
+      // suitedCards. 
       ArrayList<Integer> sortedComb = new ArrayList<>(combCards);
       Collections.sort(sortedComb);
       int consecutiveSuited = 1;
-      for (int i = 0; i < sortedComb.size() - 1; i++) {
+      for (int i = 0; i < 4; i++) {
+         ArrayList<Integer> suitedRanks = new ArrayList<>();
+         for (Integer x : sortedComb) {
+            if (x % 4 == i) {
+               suitedRanks.add(x / 4);
+            }
+         }
+         
+         for (Integer x : suitedRanks) {
+            System.out.println(i + " - suitedRanks: " + x);
+         }
+         
+         if (suitedRanks.size() >= 5) {
+            for (int j = 0; j < suitedRanks.size() - 1; j++) {
+               int curr = suitedRanks.get(j);
+               int next = suitedRanks.get(j + 1);
+               if (curr == next - 1) {
+                  consecutiveSuited++;
+                  if (consecutiveSuited >= 5) {
+                     break;
+                  }
+               } else {
+                  consecutiveSuited = 1;
+               }
+            }
+         }
+         
          if (consecutiveSuited >= 5) {
             break;
-         }
-         int curr = sortedComb.get(i); 
-         int next = sortedComb.get(i + 1);
-         if ((curr == next - 1)) {
-            consecutiveSuited++;
-            if (consecutiveSuited >= 5) {                            ******* FIX THIS *******
-               break;
-            }
          } else {
-            if (consecutiveSuited >= 5) {
-               break;
-            }
             consecutiveSuited = 1;
          }
-      }      
-      
+      }
+            
       // sets Hand for a Straight-Flush
       if (consecutiveSuited >= 5) {
          if (this.players.get(this.currTurn).getHand() < 9) {
             hand = 9;
          }
-      }*/
+      } 
       
       // sets hand for a Royal Flush, checking the cards directly
       if ((combCards.contains(0) && combCards.contains(36) && combCards.contains(40) && combCards.contains(44) && combCards.contains(48)) || 
@@ -695,4 +723,5 @@ class Table {
          return "null";
       }
    }
+   
 }
