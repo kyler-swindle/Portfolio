@@ -37,6 +37,10 @@ import java.util.Collections; // Collections Class used for the .frequency() met
 
 import java.util.Iterator; // -- Iterator Interface used for simplyfing the removal of 
                               // elements from various ArrayLists. 
+                              
+import java.util.Scanner; // --- Scanner Class used for various user inputs, including:
+                              // specification of bets,
+                              // and various debugging methods.
 
 // the Table Class handles the majority of the game content, 
 // assigning random cards dealing the cards to each of the Players, 
@@ -117,21 +121,8 @@ class Table {
       this.turn = false;
       this.river = false;
       
-      // Loop to create new Player-Objects for each of those specified
-      // by the constructor input.
-      for (int i = 0; i < numPlayers; i++) {
-         this.players.add(new Player()); // adds new Player-Object to the players ArrayList
-         
-         ArrayList<Integer> playerCards = new ArrayList<Integer>();
-         // Nested loop to add the cards (integers) to the ArrayList allCards, 
-         // and the ArrayList pocket, specific to each Player.
-         for (int j = 0; j < 2; j++) {
-            int card = newCard();
-            playerCards.add(card);
-            this.allCards.add(card); 
-         }
-         this.players.get(i).setPocket(playerCards);
-      }
+      // adds the specified number of players to the game
+      addPlayers(numPlayers);
    }
    
    
@@ -151,6 +142,54 @@ class Table {
       }
       this.allCards.add(card);
       return card;
+   }
+   
+   // addPlayer() method adds a new Player to the game by adding them to 
+   // players ArrayList and assigning them random pocket cards. 
+   public void addPlayer () {
+      this.players.add(new Player()); // adds new Player-Object to the players ArrayList
+      
+      ArrayList<Integer> playerCards = new ArrayList<Integer>();
+      // Nested loop to add the cards (integers) to the ArrayList allCards, 
+      // and the ArrayList pocket, specific to each Player.
+      for (int j = 0; j < 2; j++) {
+         int card = newCard();
+         playerCards.add(card);
+      }
+      this.players.get(this.players.size() - 1).setPocket(playerCards);
+   }
+   
+   // addPlayer(int, int) method adds a new Player to the game, allowing 
+   // the user to specify their pocket cards. 
+   public void addPlayer (int card1, int card2) {
+      if ((card1 < 0 || card1 > 51) || (card2 < 0 || card2 > 51)) {
+         throw new IllegalArgumentException("One or more invalid card values. Valid integers range [0 - 52].");
+      }
+      
+      this.players.add(new Player());
+      
+      this.players.get(this.players.size() - 1).getPocket().add(card1);
+      this.players.get(this.players.size() - 1).getPocket().add(card2);
+   }
+   
+   // addPlayers(int) method adds the amount specified in the input of new
+   // Players to the game with random pocket cards. 
+   public void addPlayers (int numPlayers) {
+      for (int i = 0; i < numPlayers; i++) {
+         addPlayer();
+      }
+   }
+   
+   // addPlayers(ArrayList<Integer>) method adds new Players with specified cards
+   // by iteratively calling addPlayer(int, int). 
+   public void addPlayers (ArrayList<Integer> pocketCards) {
+      if (pocketCards.isEmpty() || pocketCards.size() % 2 != 0) {
+         throw new IllegalArgumentException("Invalid number of cards. Must be a multiple of two. ");
+      }
+            
+      for (int i = 0; i < pocketCards.size() - 1; i += 2) {
+         addPlayer(pocketCards.get(i), pocketCards.get(i + 1));
+      }
    }
    
    // removePlayer() removes the Player-Object specied by parameter ind from all local 
@@ -246,6 +285,58 @@ class Table {
       postCard();
    }
    
+   // printHands() method prints each Player's pocket cards, their current hand,
+   // and the highest hand among them. 
+   public void printHands () {
+      if (this.players.isEmpty()) {
+         return;
+      }
+      
+      System.out.println("\nPlayers: ");
+      for (int i = 0; i < this.players.size(); i++) {
+         for (int j = 0; j < 2; j++) {
+            if (j == 0) {
+               System.out.print(this.players.get(i).getPocket().get(j) + ":");
+               System.out.print(decodeCard(this.players.get(i).getPocket().get(j)) + ", ");
+            } else {
+               System.out.print(this.players.get(i).getPocket().get(j) + ":");
+               System.out.print(decodeCard(this.players.get(i).getPocket().get(j)) + ".");
+            }
+         }
+         
+         System.out.println(" Hand: " + decodeHand(this.players.get(i).getHand()));
+      }
+      
+      System.out.println("\nHighest Hand: Player:" + currHighestHand() + " - " 
+         + decodeHand(this.players.get(currHighestHand()).getHand()) + " (" + 
+         this.players.get(currHighestHand()).getHand() + ")");
+   }
+   
+   // printTable() method prints the table cards. 
+   public void printTable () {
+      if (this.table.isEmpty()) {
+         return;
+      }
+      
+      if (this.river) {
+         System.out.println("\nRiver: " );
+      } else if (this.turn) {
+         System.out.println("\nTurn: " );
+      } else if (this.flop ) {
+         System.out.println("\nFlop: " );
+      }
+      
+      for (int i = 0; i < this.table.size(); i++) {
+         if (i == this.table.size() - 1) {
+            System.out.print(this.table.get(i) + ":");
+            System.out.println(decodeCard(this.table.get(i)) + ". ");
+         } else {
+            System.out.print(this.table.get(i) + ":");
+            System.out.print(decodeCard(this.table.get(i)) + ", ");
+         }
+      }
+   }
+   
    // postCard() method combines and calls all methods that are necessary 
    // after (an) additional shared card(s) are dealt.
    public void postCard () {
@@ -256,6 +347,8 @@ class Table {
          P.setHand(checkHand());
          nextPlayer();
       }
+      printTable();
+      printHands();
    }
    
    // nextPlayer() method increments the currTurn integer and ensures
