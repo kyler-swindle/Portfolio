@@ -253,7 +253,7 @@ class Table {
         this.currTurn = 0; 
       }
       for (Player P : this.players) {
-         this.players.get(this.currTurn).setHand(checkHand());
+         P.setHand(checkHand());
          nextPlayer();
       }
    }
@@ -323,6 +323,24 @@ class Table {
       return LOD;
    }
    
+   // resetPlayers() method resets each player to their default attribute
+   // states (excluding reserves).
+   public void resetPlayers() {
+      for (Player p : this.players) {
+         p.setIsIn(true);
+         p.setBet(0);
+         p.setHand(0);
+         p.setPocket(new ArrayList<Integer>());
+      }
+   }
+   
+   // resetHands() method resets each Player's hand zero.
+   public void resetHands() {
+      for (Player p : this.players) {
+         p.setHand(0);
+      }
+   }
+   
    // endOfHand() method performs various actions after the hand (round)
    // is over, such as: 
       // checking which Player has the winning hand, 
@@ -385,7 +403,7 @@ class Table {
    // assign each respective SIMP with an integer value referring to the
    // hand that they currently have. Returns the hand as an int 0 - 10. 
    public int checkHand () {
-      int hand = 0;
+      int hand = this.players.get(this.currTurn).getHand();
       if (this.currTurn >= this.players.size()) {
         this.currTurn = 0; 
       }
@@ -393,12 +411,6 @@ class Table {
       tempComb.addAll(this.table);
       ArrayList<Integer> combCards = new ArrayList<>(tempComb);
       
-      for (Integer x : tempComb) {
-         if (x / 4 == 0) {
-            combCards.add(x + 52);
-         }
-      }
-            
       ArrayList<Integer> rankCards = new ArrayList<>();
       for (Integer n : combCards ) {
          rankCards.add(n / 4);
@@ -406,23 +418,17 @@ class Table {
       Set<Integer> tempSet = new HashSet<>(rankCards);
       ArrayList<Integer> remDups = new ArrayList<>(tempSet);
       
-      // checks if the Player has the High Card among all the other dealt cards 
+      // checks if the Player has the High Card among rankCards 
       int highCard = 0;
-      for (int i = 0; i < this.players.size(); i++) {
-         for (int j = 0; j < 2; j++) {
-            if (!this.players.get(i).getIsIn()) {
-               break;
-            }
-                        
-            if ((this.players.get(i).getPocket().get(j) / 4) > highCard) {
-               highCard = this.players.get(i).getPocket().get(j) / 4;
-            }
+      for (Integer X : rankCards) {
+         if (X > highCard) {
+            highCard = X;
          }
       }
       
       // sets hand for a High Card
-      if (this.players.get(this.currTurn).getPocket().contains(highCard)) {
-         if (this.players.get(this.currTurn).getHand() < 1) { // this doesnt work w/ the 4-card ordering system yet
+      if (rankCards.contains(highCard)) {
+         if (this.players.get(this.currTurn).getHand() <= 1) {
             hand = 1;
          }
       }
@@ -434,9 +440,14 @@ class Table {
       int numPairs = 0;
       int numTrios = 0;
       int numQuads = 0;
-      int likeRanks = 0;
       for (Integer rank : remDups) {
-         likeRanks = Collections.frequency(rankCards, rank);
+         int likeRanks = 0;
+         for (Integer dup : rankCards) {
+            if (rank == dup) {
+               likeRanks++;
+            }
+         }
+         
          if (likeRanks == 4) {
             numQuads++;
          } else if (likeRanks == 3) {
@@ -446,22 +457,22 @@ class Table {
          }
       }
       
-      // sets for hand for a Pair                  ****NEEDS TO BE FIXED****
-      if (numPairs == 1) {
+      // sets for hand for a Pair
+      if (numPairs >= 1) {
          if (this.players.get(this.currTurn).getHand() < 2) {
             hand = 2;
          }
       }
       
-      // sets hand for Two-Pair                    ****NEEDS TO BE FIXED****
-      if (numPairs == 2) {
+      // sets hand for Two-Pair
+      if (numPairs >= 2) {
          if (this.players.get(this.currTurn).getHand() < 3) {
             hand = 3;
          }
       }
       
-      // sets hand for a Three of a Kind           ****NEEDS TO BE FIXED****
-      if (numTrios == 1) {
+      // sets hand for a Three of a Kind
+      if (numTrios >= 1) {
          if (this.players.get(this.currTurn).getHand() < 4) {
             hand = 4;
          }
@@ -470,9 +481,14 @@ class Table {
       // checks for a straight among the ArrayList sortedRanks, which
       // has also had any duplicates removed via temporarily converting
       // it to a HashSet.  
-      boolean straight = false; 
-      ArrayList<Integer> sortedRanks = new ArrayList<>(remDups);
-      Collections.sort(sortedRanks);
+      ArrayList<Integer> tempSorted = new ArrayList<>(remDups);
+      Collections.sort(tempSorted);
+      ArrayList<Integer> sortedRanks = new ArrayList<>(tempSorted);
+      for (Integer x : tempSorted) {
+         if (x == 0) {
+            sortedRanks.add(13); // adds Aces as 13's as well for the case of a Broadway straight
+         }
+      }
       
       int consecutive = 1;
       for (int i = 0; i < sortedRanks.size() - 1; i++) {
@@ -487,14 +503,12 @@ class Table {
       }
       
       if (consecutive >= 5) {
-         straight = true;
          if (this.players.get(this.currTurn).getHand() < 5) {
             hand = 5;
          }
       }
             
       // checks for flush among combCards
-      boolean flush = false;
       int numHearts = 0;
       int numDiamonds = 0;
       int numSpades = 0;
@@ -514,21 +528,20 @@ class Table {
       
       // sets Hand for a Flush
       if (numHearts >= 5 || numDiamonds >= 5 || numSpades >= 5 || numClubs >= 5) {
-         flush = true;
          if (this.players.get(this.currTurn).getHand() < 6) {
             hand = 6;
          }
       }
       
       // sets Hand for a Full House
-      if (numTrios == 1 && numPairs == 1) {
+      if (numTrios >= 1 && numPairs >= 1) {
          if (this.players.get(this.currTurn).getHand() < 7) {
             hand = 7;
          }
       }
       
       // sets Hand for a Four of a Kind
-      if (numQuads == 1) {
+      if (numQuads >= 1) {
          if (this.players.get(this.currTurn).getHand() < 8) {
             hand = 8;
          }
@@ -546,14 +559,15 @@ class Table {
          ArrayList<Integer> suitedRanks = new ArrayList<>();
          for (Integer x : sortedComb) {
             if (x % 4 == i) {
-               suitedRanks.add(x / 4);
+               if (x / 4 == 0) {
+                  suitedRanks.add(13); // if an Ace is present, adds it as a 13 as well 
+                  suitedRanks.add(x / 4); // as a 0 (zero)
+               } else {
+                  suitedRanks.add(x / 4); // otherwise adds rank as normal
+               }
             }
          }
-         
-         for (Integer x : suitedRanks) {
-            System.out.println(i + " - suitedRanks: " + x);
-         }
-         
+                  
          if (suitedRanks.size() >= 5) {
             for (int j = 0; j < suitedRanks.size() - 1; j++) {
                int curr = suitedRanks.get(j);
@@ -592,7 +606,7 @@ class Table {
             hand = 10;
          }
       }
-      
+            
       return hand;
    }
    
@@ -612,40 +626,7 @@ class Table {
       
       return highIndex;
    }
-   
-   /*
-   // encodeRank() method returns an integer value for the rank of each card
-   // 2 (Two) - 14 (Ace). 
-   public int encodeRank (int card) {
-      if (card == 1 || card == 14 || card == 27 || card == 40) {
-         return 2;
-      } else if (card == 2 || card == 15 || card == 28 || card == 41) {
-         return 3;
-      } else if (card == 3 || card == 16 || card == 29 || card == 42) {
-         return 4;
-      } else if (card == 4 || card == 17 || card == 30 || card == 43) {
-         return 5;
-      } else if (card == 5 || card == 18 || card == 31 || card == 44) {
-         return 6;
-      } else if (card == 6 || card == 19 || card == 32 || card == 45) {
-         return 7;
-      } else if (card == 7 || card == 20 || card == 33 || card == 46) {       // this would be entirely unnecessary if the cards
-         return 8;                                                            // were sorted with the ranks in sets of four 
-      } else if (card == 8 || card == 21 || card == 34 || card == 47) {       // 1-4 : aces, 5-8 : twos, etc.... 
-         return 9;                                                            // or maybe 49-52 : aces...whichever
-      } else if (card == 9 || card == 22 || card == 35 || card == 48) {       // that way the rank could be determined by just dividing by 4
-         return 10;                                                           // suit could be determined with the % 4... (this one hurt)
-      } else if (card == 10 || card == 23 || card == 36 || card == 49) {
-         return 11;
-      } else if (card == 11 || card == 24 || card == 37 || card == 50) {
-         return 12;
-      } else if (card == 12 || card == 25 || card == 38 || card == 51) {
-         return 13;
-      } else {
-         return 14;
-      }
-   }*/
-   
+      
    // decodeCard() outputs the string representation of the assigned integer card value,
    // using a StringBuilder.
       // First block of if's determines the rank,
@@ -700,7 +681,7 @@ class Table {
    // the integer value that stores the respective hand. 
    public String decodeHand (int hand) {
       if (hand == 1) {
-         return "Pair";
+         return "High Card";
       } else if (hand == 2) {
          return "Pair";
       } else if (hand == 3) {
