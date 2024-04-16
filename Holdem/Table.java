@@ -159,6 +159,14 @@ class Table {
       this.players.get(this.players.size() - 1).setPocket(playerCards);
    }
    
+   // addPlayers(int) method adds the amount specified in the input of new
+   // Players to the game with random pocket cards. 
+   public void addPlayers (int numPlayers) {
+      for (int i = 0; i < numPlayers; i++) {
+         addPlayer();
+      }
+   }
+   
    // addPlayer(int, int) method adds a new Player to the game, allowing 
    // the user to specify their pocket cards. 
    public void addPlayer (int card1, int card2) {
@@ -166,18 +174,13 @@ class Table {
          throw new IllegalArgumentException("One or more invalid card values. Valid integers range [0 - 52].");
       }
       
-      this.players.add(new Player());
+      this.players.add(new Player()); // adds new Player-Object
       
-      this.players.get(this.players.size() - 1).getPocket().add(card1);
+      this.allCards.add(card1); // adds each of the specified cards to allCards
+      this.allCards.add(card2);
+      
+      this.players.get(this.players.size() - 1).getPocket().add(card1); // assigns the new Player's pocket cards
       this.players.get(this.players.size() - 1).getPocket().add(card2);
-   }
-   
-   // addPlayers(int) method adds the amount specified in the input of new
-   // Players to the game with random pocket cards. 
-   public void addPlayers (int numPlayers) {
-      for (int i = 0; i < numPlayers; i++) {
-         addPlayer();
-      }
    }
    
    // addPlayers(ArrayList<Integer>) method adds new Players with specified cards
