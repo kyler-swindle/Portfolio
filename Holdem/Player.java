@@ -64,7 +64,7 @@ class Player {
                                        // alternatively, if it is not yet their turn, their outstanding bet
                                        // prior to making the decision to match, raise, or fold another Player's
                                        // bet amount.
-   
+      
    /****************************************************************************************************************
       Constructor(s): 
    */
@@ -74,7 +74,7 @@ class Player {
    Player () {
       this.hand = 0;
       this.reserves = 10000;
-      this.isIn = false;
+      this.isIn = true;
       this.pocket = new ArrayList<Integer>();
       this.bet = 0;
    }
@@ -160,6 +160,14 @@ class Player {
    /****************************************************************************************************************
       Various methods(s): 
    */
+   
+   // comparePocket() method will compare the Player's pocket to the input
+   // Player's pocket, assigning integer values to the ranks of each SIMP's
+   // cards to determine who has the highest card of the two, if they have 
+   // one of the same cards, then the 
+   public int comparePocket (Player plr) {
+      return -1; 
+   }
    
    // betAmount() method determines the amount for each 'simulated' 
    // (to refrain from the use of the term 'A.I.') player, henceforth referred 
