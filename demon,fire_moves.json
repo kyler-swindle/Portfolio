@@ -1,0 +1,30 @@
+{
+    "Hellfire Whip" : {
+        "damage" : 66, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 10,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 35,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Demon"}, {"parent_class": "Fire", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Hellfire"],
+        "prestige" : null
+    },
+    "Hell Hath No" : {
+        "damage" : 305, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 75,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 10, 
+        "stamina" : 85,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Demon"}, {"parent_class": "Fire", "subclass": ""}], 
+        "rarity" : "Omega", 
+        "effects" : ["Hellfire"],
+        "prestige" : null
+    }
+}

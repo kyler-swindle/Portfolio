@@ -1,0 +1,30 @@
+{
+    "Sandstorm" : {
+        "damage" : 3, 
+        "iterations" : 5,
+        "duration" : 5,
+        "cooldown" : -5,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 55,
+        "move_types" : [{"parent_class": "Air", "subclass": ""}, {"parent_class": "Earth", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Stun"],
+        "prestige" : null
+    }, 
+    "Dust Devil" : {
+        "damage" : 25, 
+        "iterations" : 4,
+        "duration" : 5,
+        "cooldown" : -5,
+        "accuracy" : 0.95,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Air", "subclass": ""}, {"parent_class": "Earth", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Stun 2"],
+        "prestige" : null
+    }
+}

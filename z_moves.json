@@ -1,0 +1,30 @@
+{
+    "Surge" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 10,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 65,
+        "move_types" : [{"parent_class": "", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Surge"],
+        "prestige" : {
+            "name" : "Surge", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 350, 
+            "experience_multiplier" : 2.5,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "stamina", "value" : -5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "swap_status_effect", "perk" : "Surge", "value" : "Surge 2", "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "stamina", "value" : -10, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "stamina", "value" : -20, "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Surge 2", "value" : "Surge 3", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }
+}

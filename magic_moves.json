@@ -1,0 +1,129 @@
+{
+    "Sickness" : {
+        "damage" : 50, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 20,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 20,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Weakness"], 
+        "prestige" : null
+    },
+    "Telekinetic Hurl" : {
+        "damage" : 35, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 20,
+        "accuracy" : 1.00,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "prestige" : null
+    }, 
+    "Magi-Flash Burst" : {
+        "damage" : 2, 
+        "iterations" : 5,
+        "duration" : 1,
+        "cooldown" : -3,
+        "accuracy" : 0.67,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Stun"],
+        "prestige" : {
+            "name" : "Magi-Flash Burst", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 250, 
+            "experience_multiplier" : 2,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "stamina", "value" : -15, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "damage", "value" : 3, "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "stamina", "value" : -20, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "damage", "value" : 4, "applied" : false, "event_text" : "Your Mon's magical light became brighter and stronger! "}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "iterations", "value" : 5, "applied" : false, "event_text" : "Your Mon practiced their magic to use more light bursts! "}, 
+                {"rank" : 4, "type" : "name_change", "perk" : "name", "value" : "Magi-Blast Burst", "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Brilliant Burst", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Accuracy Hex" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 30,
+        "accuracy" : 0.5,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 60,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Accuracy Debuff"],
+        "prestige" : null
+    }, 
+    "Draining Aura" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 10,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 35,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Drain"],
+        "prestige" : {
+            "name" : "Draining Aura", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 750, 
+            "experience_multiplier" : 3,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "stamina", "value" : -5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "iterations", "value" : 1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "stamina", "value" : -10, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "iterations", "value" : 3, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Drain", "value" : "Drain 2", "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Draining Aura Burst", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Reflect" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 10,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 35,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Damage Reflection"],
+        "prestige" : null
+    }, 
+    "Health Charm" : {
+        "damage" : -10, 
+        "iterations" : 10,
+        "duration" : 2,
+        "cooldown" : 70,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 100,
+        "move_types" : [{"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "prestige" : null
+    }
+}

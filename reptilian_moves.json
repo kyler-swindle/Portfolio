@@ -1,0 +1,59 @@
+{
+    "Venomstrike" : {
+        "damage" : 50, 
+        "iterations" : 1,
+        "duration" : 20,
+        "cooldown" : 10,
+        "accuracy" : 0.5,
+        "precision" : 0.01,
+        "recoil" : 10, 
+        "stamina" : 30,
+        "move_types" : [{"parent_class": "Beast", "subclass": "Reptilian"}], 
+        "rarity" : "Any", 
+        "effects" : ["Venom", "Intimidation"],
+        "prestige" : null
+    }, 
+    "Tailwhip" : {
+        "damage" : 20, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 3,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Beast", "subclass": "Reptilian"}], 
+        "rarity" : "Any", 
+        "effects" : ["Intimidation"],
+        "prestige" : {
+            "name" : "Tailwhip", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 400, 
+            "experience_multiplier" : 2,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : "Your Mon starting whipping more forcefully! "}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.05, "applied" : false, "event_text" : ""},
+                {"rank" : 3, "type" : "stat_boost", "perk" : "iterations", "value" : 1, "applied" : false, "event_text" : "Your Mon began tail-whipping on the backswing! "}, 
+                {"rank" : 4, "type" : "status_effect", "perk" : "effects", "value" : "Dazed", "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "iterations", "value" : 4, "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Twirling Tail Twister", "applied" : false, "event_text" : "Your Mon learned to spin! "}
+            ]
+        }
+    },
+    "Coiling Constrictor" : {
+        "damage" : 100, 
+        "iterations" : 1,
+        "duration" : 30,
+        "cooldown" : 30,
+        "accuracy" : 0.9,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Beast", "subclass": "Reptilian"}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Stun", "Intimidation"],
+        "prestige" : null
+    }
+}

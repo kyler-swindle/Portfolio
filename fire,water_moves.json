@@ -1,0 +1,30 @@
+{
+    "Geysershot" : {
+        "damage" : 45, 
+        "iterations" : 1,
+        "duration" : 3,
+        "cooldown" : 10,
+        "accuracy" : 0.85,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 25,
+        "move_types" : [{"parent_class": "Fire", "subclass": ""}, {"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Blister"],
+        "prestige" : null
+    }, 
+    "Steam Blast" : {
+        "damage" : 20, 
+        "iterations" : 3,
+        "duration" : 3,
+        "cooldown" : 5,
+        "accuracy" : 0.9,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Fire", "subclass": ""}, {"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Blister"],
+        "prestige" : null
+    }
+}

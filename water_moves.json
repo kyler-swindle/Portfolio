@@ -1,0 +1,115 @@
+{
+    "Whirlpool" : {
+        "damage" : 30, 
+        "iterations" : 1,
+        "duration" : 3,
+        "cooldown" : 10,
+        "accuracy" : 0.9,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 20,
+        "move_types" : [{"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Soaked"],
+        "prestige" : null
+    },
+    "Water Burst" : {
+        "damage" : 10, 
+        "iterations" : 5,
+        "duration" : 1,
+        "cooldown" : 5,
+        "accuracy" : 0.6,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Soaked"],
+        "prestige" : {
+            "name" : "Water Burst", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 400, 
+            "experience_multiplier" : 3,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "cooldown", "value" : -2, "applied" : false, "event_text" : ""},
+                {"rank" : 2, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "status_effect", "perk" : "effects", "value" : "Concussed", "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "iterations", "value" : 2, "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Water-Jet Burst", "applied" : false, "event_text" : ""}
+            ]
+        }
+    },
+    "Soak Spray" : {
+        "damage" : 20, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 5,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Soaked"],
+        "prestige" : null
+    },
+    "Hydropulse" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 10,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 65,
+        "move_types" : [{"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Surge"],
+        "prestige" : {
+            "name" : "Surge", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 350, 
+            "experience_multiplier" : 2.5,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "stamina", "value" : -5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "swap_status_effect", "perk" : "Surge", "value" : "Surge 2", "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "stamina", "value" : -10, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "stamina", "value" : -20, "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Surge 2", "value" : "Surge 3", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Flood" : {
+        "damage" : 15, 
+        "iterations" : 10,
+        "duration" : 3,
+        "cooldown" : 20,
+        "accuracy" : 0.6,
+        "precision" : 0.01,
+        "recoil" : 10, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Soaked"],
+        "prestige" : null
+    },
+    "Tsunami" : {
+        "damage" : 225, 
+        "iterations" : 1,
+        "duration" : 20,
+        "cooldown" : 40,
+        "accuracy" : 0.7,
+        "precision" : 0.01,
+        "recoil" : 30, 
+        "stamina" : 100,
+        "move_types" : [{"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Omega", 
+        "effects" : ["Soaked"],
+        "prestige" : null
+    }
+}

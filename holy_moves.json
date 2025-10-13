@@ -1,0 +1,55 @@
+{
+    "Holy Beam" : {
+        "damage" : 60, 
+        "iterations" : 1,
+        "duration" : 5,
+        "cooldown" : 10,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 70,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Holy"}], 
+        "rarity" : "Any", 
+        "prestige" : null
+    }, 
+    "Prayer" : {
+        "damage" : 35, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 5,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 25,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Holy"}], 
+        "rarity" : "Any", 
+        "prestige" : null
+    }, 
+    "Divinity" : {
+        "damage" : 20, 
+        "iterations" : 10,
+        "duration" : 4,
+        "cooldown" : -4,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 175,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Holy"}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Stun 3"],
+        "prestige" : null
+    }, 
+    "Glory" : {
+        "damage" : 325, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 60,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 250,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Holy"}], 
+        "rarity" : "Omega", 
+        "prestige" : null
+    }
+}

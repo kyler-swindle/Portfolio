@@ -1,0 +1,34 @@
+[    
+    {
+        "name": "Lady Luck's Lenity",
+        "effect_type": ["buff", "buff"],
+        "target_type": ["Move", "Move"],
+        "target_self": [true, true],
+        "target_attribute": ["accuracy", "precision"],
+        "value": [100.0, 100.0],
+        "stackable": [false, false],
+        "duration": 2,
+        "trigger": "on_hit",
+        "application_chance": 1.0,
+        "permanent": true,
+        "conditional": "3_previous_move_outcome",
+        "conditional_operator": "==",
+        "conditional_value": "miss"
+    }, 
+    {
+        "name": "Quick Draw",
+        "effect_type": ["quick-draw"],
+        "target_type": ["Mon"],
+        "target_self": [true],
+        "target_attribute": [null],
+        "value": [1],
+        "stackable": [false],
+        "duration": 2,
+        "trigger": "on_turn_start",
+        "application_chance": 1.0,
+        "permanent": true,
+        "conditional": null,
+        "conditional_operator": null,
+        "conditional_value": null
+    }
+]

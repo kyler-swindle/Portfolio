@@ -1,0 +1,103 @@
+{
+    "Claw" : {
+        "damage" : 25, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 3,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 20,
+        "move_types" : [{"parent_class": "Beast", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Bleed"],
+        "prestige" : {
+            "name" : "Claw", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 1000, 
+            "experience_multiplier" : 2.5,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.05, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "swap_status_effect", "perk" : "Bleed", "value" : "Bleed 2", "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "iterations", "value" : 1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "iterations", "value" : 2, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Bleed 2", "value" : "Bleeding", "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "status_effect", "perk" : "effects", "value" : "Enraged", "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Claw-Slash Craze", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Pounce" : {
+        "damage" : 65, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 30,
+        "accuracy" : 0.4,
+        "precision" : 0.01,
+        "recoil" : 20, 
+        "stamina" : 60,
+        "move_types" : [{"parent_class": "Beast", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Bleed"],
+        "prestige" : null
+    }, 
+    "Bite" : {
+        "damage" : 55, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 10,
+        "accuracy" : 0.6,
+        "precision" : 0.01,
+        "recoil" : 10, 
+        "stamina" : 30,
+        "move_types" : [{"parent_class": "Beast", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Bleed"],
+        "prestige" : null
+    }, 
+    "Headbutt" : {
+        "damage" : 10, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : -20,
+        "accuracy" : 0.65,
+        "precision" : 0.01,
+        "recoil" : 30, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Beast", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Stun"],
+        "prestige" : null
+    },
+    "Feral Frenzy" : {
+        "damage" : 35, 
+        "iterations" : 5,
+        "duration" : 1,
+        "cooldown" : 35,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 25, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Beast", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Bleed", "Enraged"],
+        "prestige" : null
+    },
+    "Rabid Thrash" : {
+        "damage" : 135, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 40,
+        "accuracy" : 0.85,
+        "precision" : 0.01,
+        "recoil" : 15, 
+        "stamina" : 30,
+        "move_types" : [{"parent_class": "Beast", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Bleeding", "Enraged"],
+        "prestige" : null
+    }
+}

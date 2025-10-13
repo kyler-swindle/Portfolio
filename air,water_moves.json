@@ -1,0 +1,42 @@
+{
+    "Fogscreen" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : -15,
+        "accuracy" : 0.9,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 20,
+        "move_types" : [{"parent_class": "Air", "subclass": ""}, {"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Low Visibility"],
+        "prestige" : null
+    }, 
+    "Waterspout" : {
+        "damage" : 35, 
+        "iterations" : 6,
+        "duration" : 3,
+        "cooldown" : 25,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Air", "subclass": ""}, {"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "prestige" : null
+    }, 
+    "Hurricane" : {
+        "damage" : 80, 
+        "iterations" : 5,
+        "duration" : 5,
+        "cooldown" : 30,
+        "accuracy" : 0.6,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Air", "subclass": ""}, {"parent_class": "Water", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "prestige" : null
+    }
+}

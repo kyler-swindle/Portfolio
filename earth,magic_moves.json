@@ -1,0 +1,41 @@
+{
+    "Rock Hail Twister" : {
+        "damage" : 4, 
+        "iterations" : 12,
+        "duration" : 1,
+        "cooldown" : 5,
+        "accuracy" : 0.7,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 30,
+        "move_types" : [{"parent_class": "Earth", "subclass": ""}, {"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Any", 
+        "prestige" : null
+    },
+    "Meteor Shower" : {
+        "damage" : 45, 
+        "iterations" : 16,
+        "duration" : 10,
+        "cooldown" : 40,
+        "accuracy" : 0.33,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 75,
+        "move_types" : [{"parent_class": "Earth", "subclass": ""}, {"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Omega", 
+        "prestige" : null
+    },
+    "Meteorite Impact" : {
+        "damage" : 325, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 50,
+        "accuracy" : 0.7,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 100,
+        "move_types" : [{"parent_class": "Earth", "subclass": ""}, {"parent_class": "Magic", "subclass": ""}], 
+        "rarity" : "Omega", 
+        "prestige" : null
+    }
+}

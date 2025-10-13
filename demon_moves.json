@@ -1,0 +1,43 @@
+{
+    "Arteryburst" : {
+        "damage" : 25, 
+        "iterations" : 3,
+        "duration" : 1,
+        "cooldown" : 30,
+        "accuracy" : 0.5,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Demon"}], 
+        "rarity" : "Any", 
+        "effects" : ["Bleed"],
+        "prestige" : null
+    },
+    "Bloodcurdle" : {
+        "damage" : 5, 
+        "iterations" : 5,
+        "duration" : 3,
+        "cooldown" : -5,
+        "accuracy" : 0.6,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Demon"}], 
+        "rarity" : "Any", 
+        "effects" : ["Stun"],
+        "prestige" : null
+    },
+    "Necromantic Ritual" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 100,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 130,
+        "move_types" : [{"parent_class": "Magic", "subclass": "Demon"}], 
+        "rarity" : "Omega", 
+        "prestige" : null
+    }
+}

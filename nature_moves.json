@@ -1,0 +1,161 @@
+{
+    "Acorn Fury" : {
+        "damage" : 1, 
+        "iterations" : 10,
+        "duration" : 1,
+        "cooldown" : 2,
+        "accuracy" : 0.5,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Splinter"],
+        "prestige" : {
+            "name" : "Acorn Fury", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 1000, 
+            "experience_multiplier" : 5,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "iterations", "value" : 10, "applied" : false, "event_text" : "Your Mon sprouted more acorns! "}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.05, "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "damage", "value" : 2, "applied" : false, "event_text" : "Your Mon's acorns started growing into sweet-gum balls! "}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "damage", "value" : 3, "applied" : false, "event_text" : "Your Mon started producing huge coulter pinecones! "}, 
+                {"rank" : 5, "type" : "status_effect", "perk" : "effects", "value" : "Bleed", "applied" : false, "event_text" : "Your Mon started producing huge coulter pinecones! [Status Effect 'Bleed' Unlocked] "}, 
+                {"rank" : 1, "type" : "name_change", "perk" : "name", "value" : "Acorn Grapeshot", "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "name_change", "perk" : "name", "value" : "Sweet-Gum Grapeshot", "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Coulter Pinecone Barrage", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Vinethorn Whip" : {
+        "damage" : 15, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 2,
+        "accuracy" : 0.9,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 15,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Bleed"],
+        "prestige" : {
+            "name" : "Vinethorn Whip", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 1000, 
+            "experience_multiplier" : 5,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : "Your Mon's thorns started growing larger! "}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "iterations", "value" : 1, "applied" : false, "event_text" : "Your Mon grew an extra vine! "}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "stamina", "value" : -5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "iterations", "value" : 4, "applied" : false, "event_text" : "Your Mon's vines tripled in number! "}, 
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Bleed", "value" : "Bleed 2", "applied" : false, "event_text" : "Your Mon's thorns began growing sharper! "}, 
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Thornblade Vine-Whips", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Spore Miasma" : {
+        "damage" : 40, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 1,
+        "accuracy" : 0.90,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 20,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Poison"],
+        "prestige" : null
+    }, 
+    "Timber" : {
+        "damage" : 45, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 3,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 10,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Concussed"],
+        "prestige" : null
+    }, 
+    "Photosynthesis" : {
+        "damage" : 0, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 10,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 75,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Photosynthesis"],
+        "prestige" : {
+            "name" : "Photosynthesis", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 250, 
+            "experience_multiplier" : 3,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "stamina", "value" : -10, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "swap_status_effect", "perk" : "Photosynthesis", "value" : "Photosynthesis 2", "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "stamina", "value" : -15, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "stamina", "value" : -20, "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Photosynthesis 2", "value" : "Photosynthesis 3", "applied" : false, "event_text" : ""}
+            ]
+        }
+    }, 
+    "Rose Thorn Sarcophagus" : {
+        "damage" : 5, 
+        "iterations" : 25,
+        "duration" : 1,
+        "cooldown" : 30,
+        "accuracy" : 0.75,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 35,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Toxin"],
+        "prestige" : null
+    }, 
+    "Carnivorous Flytrap" : {
+        "damage" : 95, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 20,
+        "accuracy" : 0.90,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Bleeding"],
+        "prestige" : null
+    }, 
+    "Giant Sequoia Slam" : {
+        "damage" : 270, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 50,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 70,
+        "move_types" : [{"parent_class": "Nature", "subclass": ""}], 
+        "rarity" : "Omega", 
+        "effects" : ["Brain Damage"],
+        "prestige" : null
+    }
+}

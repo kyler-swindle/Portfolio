@@ -1,0 +1,86 @@
+{
+    "Explosive Burst" : {
+        "damage" : 15, 
+        "iterations" : 3,
+        "duration" : 1,
+        "cooldown" : 5,
+        "accuracy" : 0.3,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 20,
+        "move_types" : [{"parent_class": "Fire", "subclass": "Explosion"}], 
+        "rarity" : "Any", 
+        "effects" : ["Smolder"],
+        "prestige" : {
+            "name" : "Explosive Burst", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 900, 
+            "experience_multiplier" : 2,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "iterations", "value" : 2, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "iterations", "value" : 3, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "swap_status_effect", "perk" : "Smolder", "value" : "Charred", "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "name_change", "perk" : "name", "value" : "Explosive Chain", "applied" : false, "event_text" : ""},
+                {"rank" : 5, "type" : "name_change", "perk" : "name", "value" : "Bombing Run", "applied" : false, "event_text" : ""}
+            ]
+        }
+    },
+    "Air Burst" : {
+        "damage" : 50, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 5,
+        "accuracy" : 0.5,
+        "precision" : 0.01,
+        "recoil" : 20, 
+        "stamina" : 30,
+        "move_types" : [{"parent_class": "Fire", "subclass": "Explosion"}], 
+        "rarity" : "Any", 
+        "prestige" : null
+    },
+    "Concussive Blast" : {
+        "damage" : 5, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : -10,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 50,
+        "move_types" : [{"parent_class": "Fire", "subclass": "Explosion"}], 
+        "rarity" : "Any", 
+        "effects" : ["Stun"],
+        "prestige" : null
+    },
+    "A-Bomb" : {
+        "damage" : 225, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 20,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 45, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Fire", "subclass": "Explosion"}], 
+        "rarity" : "Legendary", 
+        "prestige" : null
+    },
+    "Supernova" : {
+        "damage" : 405, 
+        "iterations" : 1,
+        "duration" : 1,
+        "cooldown" : 40,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 105, 
+        "stamina" : 140,
+        "move_types" : [{"parent_class": "Fire", "subclass": "Explosion"}], 
+        "rarity" : "Omega", 
+        "prestige" : null
+    }
+}

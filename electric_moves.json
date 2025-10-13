@@ -1,0 +1,75 @@
+{
+    "Spark-Stun" : {
+        "damage" : 40, 
+        "iterations" : 1,
+        "duration" : 5,
+        "cooldown" : -5,
+        "accuracy" : 0.6,
+        "precision" : 0.01,
+        "recoil" : 20, 
+        "stamina" : 35,
+        "move_types" : [{"parent_class": "Electric", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Stun"],
+        "prestige" : null
+    },
+    "Jolts-Burst" : {
+        "damage" : 20, 
+        "iterations" : 3,
+        "duration" : 1,
+        "cooldown" : 10,
+        "accuracy" : 0.65,
+        "precision" : 0.01,
+        "recoil" : 10, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Electric", "subclass": ""}], 
+        "rarity" : "Any", 
+        "effects" : ["Jolt"],
+        "prestige" : {
+            "name" : "Explosive Burst", 
+            "rank" : 0, 
+            "experience" : 0, 
+            "experience_needed" : 900, 
+            "experience_multiplier" : 2,
+            "max_rank" : 5, 
+            "milestones" : [
+                {"rank" : 1, "type" : "stat_boost", "perk" : "cooldown", "value" : -5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 2, "type" : "stat_boost", "perk" : "iterations", "value" : 1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 3, "type" : "stat_boost", "perk" : "accuracy", "value" : 0.05, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "stat_boost", "perk" : "damage", "value" : 5, "applied" : false, "event_text" : ""}, 
+                {"rank" : 5, "type" : "stat_boost", "perk" : "iterations", "value" : 1, "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "swap_status_effect", "perk" : "Jolt", "value" : "Arc", "applied" : false, "event_text" : ""}, 
+                {"rank" : 4, "type" : "name_change", "perk" : "name", "value" : "Arcs-Burst", "applied" : false, "event_text" : ""},
+                {"rank" : 4, "type" : "name_change", "perk" : "name", "value" : "Arc-Chain Surge", "applied" : false, "event_text" : ""}
+            ]
+        }
+    },
+    "Arc Charge" : {
+        "damage" : 150, 
+        "iterations" : 1,
+        "duration" : 10,
+        "cooldown" : 60,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 90,
+        "move_types" : [{"parent_class": "Electric", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Arc"],
+        "prestige" : null
+    },
+    "Lightning Barrage" : {
+        "damage" : 45, 
+        "iterations" : 8,
+        "duration" : 1,
+        "cooldown" : 50,
+        "accuracy" : 1.0,
+        "precision" : 0.01,
+        "recoil" : 0, 
+        "stamina" : 90,
+        "move_types" : [{"parent_class": "Electric", "subclass": ""}], 
+        "rarity" : "Omega", 
+        "effects" : ["Arc"],
+        "prestige" : null
+    }
+}

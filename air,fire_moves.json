@@ -1,0 +1,16 @@
+{
+    "Heatwave" : {
+        "damage" : 30, 
+        "iterations" : 5,
+        "duration" : 3,
+        "cooldown" : 15,
+        "accuracy" : 0.8,
+        "precision" : 0.01,
+        "recoil" : 5, 
+        "stamina" : 40,
+        "move_types" : [{"parent_class": "Air", "subclass": ""}, {"parent_class": "Fire", "subclass": ""}], 
+        "rarity" : "Legendary", 
+        "effects" : ["Blister"],
+        "prestige" : null
+    }
+}
