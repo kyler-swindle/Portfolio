@@ -764,7 +764,7 @@ def main29():
 
 def main30():
     m = Mon(
-        name="Test Monass"
+        name="Test Mon"
     )
 
     move = Move.get([Type("Fire", None)], "Inferno")
