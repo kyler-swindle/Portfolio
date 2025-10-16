@@ -764,7 +764,7 @@ def main29():
 
 def main30():
     m = Mon(
-        name="Bitchass"
+        name="Test Monass"
     )
 
     move = Move.get([Type("Fire", None)], "Inferno")
@@ -794,7 +794,7 @@ def main30():
         print(f"Remaining durations: {[e.duration_remaining for e in m.effects]}")
 
 def main31():
-    m = Mon(name="Bitcherson", tp=[Type("Fire", None)])
+    m = Mon(name="Test Mon", tp=[Type("Fire", None)])
     m.rarity = m.assign_rarity_weighted(minimum_rarity="Omega")
 
     move = Move.get([Type("Fire", None)], "Inferno")
@@ -807,7 +807,7 @@ def main31():
     m.battle(a, attacker_use_move=move, typewriter_delay=0.005, timing=0)
 
 def main32():
-    m = Mon(name="Bitcherson", tp=[Type("Magic", None)])
+    m = Mon(name="Test Mon", tp=[Type("Magic", None)])
     m.rarity = m.assign_rarity_weighted(minimum_rarity="Omega")
 
     move = Move.get([Type("Magic", None)], "Accuracy Hex")
@@ -820,7 +820,7 @@ def main32():
     m.battle(a, attacker_use_move=move, typewriter_delay=0.005, timing=0)
 
 def main33():
-    m = Mon(name="Bitcherson", tp=[Type("Magic", None)])
+    m = Mon(name="Test Mon", tp=[Type("Magic", None)])
     m.rarity = m.assign_rarity_weighted(minimum_rarity="Omega")
 
     move = Move.get([Type("Magic", None)], "Magi-Flash Burst")
@@ -920,7 +920,7 @@ def main35():
     Game.versus(p1, p2)
 
 def main36():
-    m = Mon(name="Bitcherson", tp=[Type("Fire", None)])
+    m = Mon(name="Test Mon", tp=[Type("Fire", None)])
     m.rarity = m.assign_rarity_weighted(minimum_rarity="Omega")
     #m.adjust_level(200, True)
 
@@ -940,7 +940,7 @@ def main36():
     #m.battle(a, attacker_use_move=move, typewriter_delay=0.005, timing=0)
 
 def main37():
-    m = Mon(name="Bitcherson", tp=[Type("Water", "Ice")])
+    m = Mon(name="Test Mon", tp=[Type("Water", "Ice")])
     m.rarity = m.assign_rarity_weighted(minimum_rarity="Omega")
     m.adjust_level(200, True)
 
@@ -966,7 +966,7 @@ def main37():
     #m.battle(a, attacker_use_move=move, typewriter_delay=0.005, timing=0)
 
 def main37():
-    m = Mon(name="Bitcherson", tp=[Type("Fire", None)])
+    m = Mon(name="Test Mon", tp=[Type("Fire", None)])
     m.rarity = m.assign_rarity_weighted(minimum_rarity="Omega")
     m.adjust_level(200, True)
 
@@ -2588,7 +2588,7 @@ def main62():
     )
 
     fighter = Mon(
-        name="Bitch", 
+        name="Test Mon", 
         perfect=True,
         tp=tp, 
         rarity=burner.assign_rarity_weighted(minimum_rarity="Epic")
