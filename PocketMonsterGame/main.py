@@ -2964,7 +2964,7 @@ def main67():
     """sim_battle_stats method testing & setup for dog_fight method"""
 
     m1 = Mon(
-        name="Bicth", 
+        name="Fighter", 
         level=20, 
         rarity="Common", 
         tp=[Type("Fire", "Explosion")]
